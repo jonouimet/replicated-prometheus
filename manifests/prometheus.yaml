@@ -1,0 +1,30 @@
+apiVersion: kots.io/v1beta1
+kind: HelmChart
+metadata:
+  # name matches the file name that you used.
+  # If you saved the file as CHART_NAME.yaml, use name: CHART_NAME
+  name: prometheus
+spec:
+# chart identifies the Helm chart from the .tgz
+# Replace CHART_NAME with the name of the chart from the .tgz
+# Replace CHART_VERSION with the version of the chart from the .tgz
+  chart:
+    name: prometheus
+    chartVersion: 19.0.1
+
+  # helmVersion identifies the version of Helm used to render the chart.
+  # Possible values are v2 or v3.
+  helmVersion: v3
+
+  # useHelmInstall identifies whether this Helm chart uses the
+  # Replicated Helm installation (false) or native Helm installation (true).
+  # Native Helm installation is available for Helm v3 charts only.
+  useHelmInstall: true
+
+  # values maps user-provided values with the Helm chart values.yaml file.
+  # You can leave the values attribute empty for this procedure.
+  values: {}
+
+  # builder values are used to create air gap packages.
+  # You can leave the builder attribute empty for this procedure.
+  builder: {}
